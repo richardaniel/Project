@@ -6,6 +6,7 @@
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -14,7 +15,8 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;

@@ -23,12 +23,11 @@ const AddExperience = ({ addExperience }) => {
 
   return (
     <section className="container">
-      <h1 className="large text-primary">Add An Experience</h1>
+      <h1 className="large text-primary">Agrega datos de experiencia</h1>
       <p className="lead">
-        <i className="fas fa-code-branch" /> Add something
-        positions that you have had in the past
+        <i className="fas fa-code-branch" /> Agrega alguna posicion o cargo en el pasado
       </p>
-      <small>* = required field</small>
+      <small>* =Filas requeridas</small>
       <form
         className="form"
         onSubmit={(e) => {
@@ -39,7 +38,7 @@ const AddExperience = ({ addExperience }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Job Title"
+            placeholder="* Puesto"
             name="title"
             value={title}
             onChange={onChange}
@@ -49,7 +48,7 @@ const AddExperience = ({ addExperience }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Company"
+            placeholder="* Compañia/empresa"
             name="company"
             value={company}
             onChange={onChange}
@@ -59,14 +58,14 @@ const AddExperience = ({ addExperience }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Location"
+            placeholder="Lugar"
             name="location"
             value={location}
             onChange={onChange}
           />
         </div>
         <div className="form-group">
-          <h4>From Date</h4>
+          <h4>Del</h4>
           <input type="date" name="from" value={from} onChange={onChange} />
         </div>
         <div className="form-group">
@@ -80,11 +79,11 @@ const AddExperience = ({ addExperience }) => {
                 setFormData({ ...formData, current: !current });
               }}
             />{' '}
-            Current Job
+            Trabajo Actual
           </p>
         </div>
         <div className="form-group">
-          <h4>To Date</h4>
+          <h4>Hasta</h4>
           <input
             type="date"
             name="to"
@@ -105,7 +104,7 @@ const AddExperience = ({ addExperience }) => {
         </div>
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
+          Regresar
         </Link>
       </form>
     </section>

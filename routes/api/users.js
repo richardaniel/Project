@@ -14,11 +14,11 @@ const User = require('../../models/User');
 // @access   Public
 router.post(
   '/',
-  check('name', 'Name is required').notEmpty(),
-  check('email', 'Please include a valid email').isEmail(),
+  check('name', 'Nombre es requerido ').notEmpty(),
+  check('email', 'Por favor incluya un correo valido').isEmail(),
   check(
     'password',
-    'Please enter a password with 6 or more characters'
+    'Ingresa una contraseña con 6 o mas caracteres'
   ).isLength({ min: 6 }),
   async (req, res) => {
     const errors = validationResult(req);
@@ -34,7 +34,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: 'User already exists' }] });
+          .json({ errors: [{ msg: 'Usuario ya existe' }] });
       }
 
       const avatar = normalize(

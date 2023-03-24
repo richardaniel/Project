@@ -61,7 +61,7 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
     const post = await Post.findById(req.params.id);
 
     if (!post) {
-      return res.status(404).json({ msg: 'Post not found' });
+      return res.status(404).json({ msg: 'Publicacion no encontrada' });
     }
 
     res.json(post);
@@ -80,17 +80,17 @@ router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
     const post = await Post.findById(req.params.id);
 
     if (!post) {
-      return res.status(404).json({ msg: 'Post not found' });
+      return res.status(404).json({ msg: 'Publicacion no encontrada' });
     }
 
     // Check user
     if (post.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: 'User not authorized' });
+      return res.status(401).json({ msg: 'Usuario no autorizado' });
     }
 
     await post.remove();
 
-    res.json({ msg: 'Post removed' });
+    res.json({ msg: 'Publicacion eliminada' });
   } catch (err) {
     console.error(err.message);
 
@@ -107,7 +107,7 @@ router.put('/like/:id', auth, checkObjectId('id'), async (req, res) => {
 
     // Check if the post has already been liked
     if (post.likes.some((like) => like.user.toString() === req.user.id)) {
-      return res.status(400).json({ msg: 'Post already liked' });
+      return res.status(400).json({ msg: 'Me gusta agregado a la publicacion' });
     }
 
     post.likes.unshift({ user: req.user.id });
@@ -130,7 +130,7 @@ router.put('/unlike/:id', auth, checkObjectId('id'), async (req, res) => {
 
     // Check if the post has not yet been liked
     if (!post.likes.some((like) => like.user.toString() === req.user.id)) {
-      return res.status(400).json({ msg: 'Post has not yet been liked' });
+      return res.status(400).json({ msg: 'No se ha dado Me gusta a la publicacion' });
     }
 
     // remove the like
@@ -154,7 +154,7 @@ router.post(
   '/comment/:id',
   auth,
   checkObjectId('id'),
-  check('text', 'Text is required').notEmpty(),
+  check('text', 'Texto es requerido').notEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -197,11 +197,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     );
     // Make sure comment exists
     if (!comment) {
-      return res.status(404).json({ msg: 'Comment does not exist' });
+      return res.status(404).json({ msg: 'Comentario no existe' });
     }
     // Check user
     if (comment.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: 'User not authorized' });
+      return res.status(401).json({ msg: 'Usuario no autorizado' });
     }
 
     post.comments = post.comments.filter(

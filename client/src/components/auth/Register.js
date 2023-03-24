@@ -33,9 +33,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <section className="container">
-      <h1 className="large text-primary">Sign Up</h1>
+      <h1 className="large text-primary">Registrarse</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Create Your Account
+        <i className="fas fa-user" /> Crear tu cuenta
       </p>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
@@ -56,8 +56,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={onChange}
           />
           <small className="form-text">
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
+           Este sitio utiliza Gravatar si quieres una imagen de perfil , use su correo de Gravatar
           </small>
         </div>
         <div className="form-group">
@@ -81,7 +80,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
+        ¿Tienes una cuenta? <Link to="/login">Ingresar</Link>
       </p>
     </section>
   );

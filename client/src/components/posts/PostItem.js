@@ -21,7 +21,7 @@ const PostItem = ({
     </div>
     <div>
       <p className="my-1">{text}</p>
-      <p className="post-date">Posted on {formatDate(date)}</p>
+      <p className="post-date">Publicado el {formatDate(date)}</p>
 
       <button
         onClick={() => addLike(_id)}

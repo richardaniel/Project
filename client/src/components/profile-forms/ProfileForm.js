@@ -88,77 +88,76 @@ const ProfileForm = ({
   return (
     <section className="container">
       <h1 className="large text-primary">
-        {creatingProfile ? 'Create Your Profile' : 'Edit Your Profile'}
+        {creatingProfile ? 'Crear tu perfil' : 'Editar tu perfil '}
       </h1>
       <p className="lead">
         <i className="fas fa-user" />
         {creatingProfile
-          ? ` Let's get some information to make your`
-          : ' Add some changes to your profile'}
+          ? ` Vamos a obtener alguna información para hacer su perfil`
+          : 'Agrega algunos cambios a tu perfil'}
       </p>
-      <small>* = required field</small>
+      <small>* = filas requeridas</small>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <select name="status" value={status} onChange={onChange}>
-            <option>* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
+            <option>* Seleccione un estado profesional</option>
+            <option value="Developer">Desarrollador</option>
+            <option value="Junior Developer">Desarrollador Junior</option>
+            <option value="Senior Developer">Desarrollador Señor</option>
+            <option value="Student or Learning">Estudiante</option>
+            <option value="Instructor">Instructor o maestro</option>
+            <option value="Other">Otra</option>
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+          Danos una idea de dónde estás en tu carrera
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
+            placeholder="Companñia/empresa"
             name="company"
             value={company}
             onChange={onChange}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+           Podria ser tu propia empresa o un trabajo 
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Website"
+            placeholder="Sitio Web"
             name="website"
             value={website}
             onChange={onChange}
           />
           <small className="form-text">
-            Could be your own or a company website
+            Podria ser tuyo o el de una compañia/empresa
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Location"
+            placeholder="Lugar"
             name="location"
             value={location}
             onChange={onChange}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+           Ciudad o Municipio (ej. SPS, Cortes)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
+            placeholder="* Habilidades"
             name="skills"
             value={skills}
             onChange={onChange}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+           Por favor use comas para separar  (ej. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
         <div className="form-group">
@@ -170,18 +169,19 @@ const ProfileForm = ({
             onChange={onChange}
           />
           <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            Si desea sus últimos repositorios y un enlace de Github, incluya su
+            nombre de usuario
+
           </small>
         </div>
         <div className="form-group">
           <textarea
-            placeholder="A short bio of yourself"
+            placeholder="Una bibliografia corta de ti "
             name="bio"
             value={bio}
             onChange={onChange}
           />
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">Hablanos un poco acerca de ti </small>
         </div>
 
         <div className="my-2">
@@ -190,9 +190,9 @@ const ProfileForm = ({
             type="button"
             className="btn btn-light"
           >
-            Add Social Network Links
+            Agregar Otras Redes Sociales 
           </button>
-          <span>Optional</span>
+          <span>Opcional</span>
         </div>
 
         {displaySocialInputs && (
@@ -256,7 +256,7 @@ const ProfileForm = ({
 
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
+         Regresar
         </Link>
       </form>
     </section>

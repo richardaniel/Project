@@ -19,7 +19,7 @@ const Post = ({ getPost, post: { post, loading } }) => {
   ) : (
     <section className="container">
       <Link to="/posts" className="btn">
-        Back To Posts
+        Regresar a las publicaciones
       </Link>
       <PostItem post={post} showActions={false} />
       <CommentForm postId={post._id} />

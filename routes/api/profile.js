@@ -123,7 +123,7 @@ router.get(
         user: user_id
       }).populate('user', ['name', 'avatar']);
 
-      if (!profile) return res.status(400).json({ msg: 'Profile not found' });
+      if (!profile) return res.status(400).json({ msg: 'Perfil no encontrado' });
 
       return res.json(profile);
     } catch (err) {
@@ -147,7 +147,7 @@ router.delete('/', auth, async (req, res) => {
       User.findOneAndRemove({ _id: req.user.id })
     ]);
 
-    res.json({ msg: 'User deleted' });
+    res.json({ msg: 'Usuario eliminado' });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -160,9 +160,9 @@ router.delete('/', auth, async (req, res) => {
 router.put(
   '/experience',
   auth,
-  check('title', 'Title is required').notEmpty(),
-  check('company', 'Company is required').notEmpty(),
-  check('from', 'From date is required and needs to be from the past')
+  check('title', 'Titulo es requerido').notEmpty(),
+  check('company', 'Compañia/empresa es requerido').notEmpty(),
+  check('from', 'Fecha es requerida y necesitra ser del pasado')
     .notEmpty()
     .custom((value, { req }) => (req.body.to ? value < req.body.to : true)),
   async (req, res) => {
@@ -212,10 +212,10 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 router.put(
   '/education',
   auth,
-  check('school', 'School is required').notEmpty(),
-  check('degree', 'Degree is required').notEmpty(),
-  check('fieldofstudy', 'Field of study is required').notEmpty(),
-  check('from', 'From date is required and needs to be from the past')
+  check('school', 'Es requerido').notEmpty(),
+  check('degree', 'Grado es requerido').notEmpty(),
+  check('fieldofstudy', 'Dato de estudios es requerido').notEmpty(),
+  check('from', 'Fecha es requerida y necesitra ser del pasado')
     .notEmpty()
     .custom((value, { req }) => (req.body.to ? value < req.body.to : true)),
   async (req, res) => {
@@ -274,7 +274,7 @@ router.get('/github/:username', async (req, res) => {
     return res.json(gitHubResponse.data);
   } catch (err) {
     console.error(err.message);
-    return res.status(404).json({ msg: 'No Github profile found' });
+    return res.status(404).json({ msg: 'No se encontro perfil de Github' });
   }
 });
 

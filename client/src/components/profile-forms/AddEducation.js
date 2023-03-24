@@ -24,12 +24,11 @@ const AddEducation = ({ addEducation }) => {
 
   return (
     <section className="container">
-      <h1 className="large text-primary">Add Your Education</h1>
+      <h1 className="large text-primary">Agrega tus datos de educacion</h1>
       <p className="lead">
-        <i className="fas fa-code-branch" /> Add any school or bootcamp that you
-        have attended
+        <i className="fas fa-code-branch" /> Agrega datos de escuela/colegio/universidad o algun curso tomado
       </p>
-      <small>* = required field</small>
+      <small>* = Filas requeridas</small>
       <form
         className="form"
         onSubmit={(e) => {
@@ -40,7 +39,7 @@ const AddEducation = ({ addEducation }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* School or Bootcamp"
+            placeholder="* Lugar de estudio"
             name="school"
             value={school}
             onChange={onChange}
@@ -50,7 +49,7 @@ const AddEducation = ({ addEducation }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Degree or Certificate"
+            placeholder="*Grado o certificado"
             name="degree"
             value={degree}
             onChange={onChange}
@@ -60,14 +59,14 @@ const AddEducation = ({ addEducation }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Field of Study"
+            placeholder="Campo de estudio"
             name="fieldofstudy"
             value={fieldofstudy}
             onChange={onChange}
           />
         </div>
         <div className="form-group">
-          <h4>From Date</h4>
+          <h4>Del</h4>
           <input type="date" name="from" value={from} onChange={onChange} />
         </div>
         <div className="form-group">
@@ -79,11 +78,11 @@ const AddEducation = ({ addEducation }) => {
               value={current}
               onChange={() => setFormData({ ...formData, current: !current })}
             />{' '}
-            Current School
+            Campus actual
           </p>
         </div>
         <div className="form-group">
-          <h4>To Date</h4>
+          <h4>Hasta</h4>
           <input
             type="date"
             name="to"
@@ -104,7 +103,7 @@ const AddEducation = ({ addEducation }) => {
         </div>
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
+          Regresar
         </Link>
       </form>
     </section>

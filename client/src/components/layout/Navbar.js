@@ -29,7 +29,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   );
 
   const guestLinks = (
-    <ul>ss
+    <ul>
       <li>
         <Link to="/profiles">Personas</Link>
       </li>

@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://richarlopez:OkTlDhoNZIhclHv0@cluster0.lsw4jmg.mongodb.net/test",
+    "jwtSecret": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "githubToken": "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"
+}
